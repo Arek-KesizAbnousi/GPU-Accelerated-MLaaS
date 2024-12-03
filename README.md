@@ -22,7 +22,7 @@ This project showcases the development of a **Machine Learning as a Service (MLa
 
 The goal of this project is to develop a **GPU-Accelerated Machine Learning as a Service (MLaaS) Platform** that streamlines the machine learning workflow by:
 
-- **Data Ingestion**: Using NVIDIA RAPIDS cuDF for efficient GPU-accelerated data processing.
+- **Data Ingestion**:  Using pandas for efficient data processing (or cuDF for GPU-accelerated data processing if applicable).
 - **Data Labeling**: Building an interactive tool to facilitate and automate the labeling process.
 - **Visualization and Dashboards**: Creating real-time dashboards for monitoring model performance and insights.
 - **Model Training**: Leveraging PyTorch and CUDA for GPU-accelerated training on the MNIST dataset.
