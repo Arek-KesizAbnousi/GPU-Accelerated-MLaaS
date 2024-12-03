@@ -38,20 +38,24 @@ The goal of this project is to develop a **GPU-Accelerated Machine Learning as a
 ## Project Structure
 ```plaintext
 gpu-accelerated-mlaas/
-├── data/                       # Directory for dataset
-├── models/                     # Directory for model files
-│   └── cnn_model.py            # CNN model definition
-├── utils/                      # Directory for utilities
-│   ├── data_ingestion.py       # Data ingestion script
-│   ├── data_preprocessing.py   # Data preprocessing script
-│   └── data_labeling.py        # Data labeling tool script
-├── templates/                  # Templates for Flask (for data labeling)
-│   └── labeling.html           # HTML template for data labeling tool
-├── dashboards/                 # Directory for dashboards
-│   └── performance_dashboard.py # Dashboard for visualization
-├── train.py                    # Model training script
-├── requirements.txt            # List of dependencies
-├── README.md                   # Documentation
+├── data/                           # Placeholder for datasets
+│   └── processed/                  # Subdirectory for processed datasets
+│       ├── mnist_ingested.csv      # Created during ingestion
+│       └── mnist_preprocessed.csv  # Created during preprocessing
+├── models/                         # Directory for model files
+│   └── cnn_model.py                # CNN model definition
+├── utils/                          # Directory for utilities
+│   ├── data_ingestion.py           # Data ingestion script
+│   ├── data_preprocessing.py       # Data preprocessing script
+│   └── data_labeling.py            # Data labeling tool script
+├── templates/                      # Templates for Flask (for data labeling)
+│   └── labeling.html               # HTML template for data labeling tool
+├── dashboards/                     # Directory for dashboards
+│   └── performance_dashboard.py    # Dashboard for visualization
+├── train.py                        # Model training script
+├── requirements.txt                # List of dependencies
+├── README.md                       # Documentation
+
 ```
 ## Objectives
 
