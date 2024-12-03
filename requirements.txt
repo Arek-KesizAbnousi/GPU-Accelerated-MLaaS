@@ -1,12 +1,21 @@
+# requirements.txt
+
+# Essential Packages
 numpy
 pandas
-cudf
-cupy-cuda112    # Replace '112' with your CUDA version, e.g., cupy-cuda113
 torch
 torchvision
+tensorflow
 flask
-dash
+
+# GPU-Accelerated Libraries
+cudf
+cupy-cuda112  # Replace '112' with your CUDA version, e.g., cupy-cuda113
+
+# Additional Packages
+elasticsearch
 plotly
-matplotlib
-seaborn
-scikit-learn
+dash
+
+# Other Dependencies
+Pillow
