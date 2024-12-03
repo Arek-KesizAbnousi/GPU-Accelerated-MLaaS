@@ -1,0 +1,18 @@
+<!-- templates/labeling.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Labeling Tool</title>
+</head>
+<body>
+    <h1>Data Labeling Tool</h1>
+    <img src="data:image/png;base64,{{ image }}" alt="MNIST Digit" />
+    <p>Current Label: {{ label }}</p>
+    <form method="post">
+        <input type="hidden" name="doc_id" value="{{ doc_id }}" />
+        <label for="label">New Label:</label>
+        <input type="number" name="label" min="0" max="9" required />
+        <input type="submit" value="Update Label" />
+    </form>
+</body>
+</html>
