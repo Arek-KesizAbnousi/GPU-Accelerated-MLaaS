@@ -1,0 +1,12 @@
+numpy
+pandas
+cudf
+cupy-cuda112    # Replace '112' with your CUDA version, e.g., cupy-cuda113
+torch
+torchvision
+flask
+dash
+plotly
+matplotlib
+seaborn
+scikit-learn
