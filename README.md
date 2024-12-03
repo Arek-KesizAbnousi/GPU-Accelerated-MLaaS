@@ -1,9 +1,58 @@
 # GPU-Accelerated MLaaS Platform with NVIDIA RAPIDS
 
-## Introduction
+## Description
 
 This project showcases the development of a **Machine Learning as a Service (MLaaS) platform** that integrates **data ingestion**, **data labeling**, **visualization**, and **dashboards**. Leveraging **NVIDIA RAPIDS**, **CUDA**, and **PyTorch**, the platform accelerates data processing and model training, demonstrating the effectiveness of GPU acceleration in machine learning workflows.
 
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Project Structure](#project-structure)
+- [Objectives](#objectives)
+- [Dataset](#dataset)
+- [Architecture](#architecture)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
+- [Results](#results)
+- [Conclusions](#conclusions)
+- [Technologies Used](#technologies-used)
+- [Future Work](#future-work)
+
+## Project Overview
+
+The goal of this project is to develop a **GPU-Accelerated Machine Learning as a Service (MLaaS) Platform** that streamlines the machine learning workflow by:
+
+- **Data Ingestion**: Using NVIDIA RAPIDS cuDF for efficient GPU-accelerated data processing.
+- **Data Labeling**: Building an interactive tool to facilitate and automate the labeling process.
+- **Visualization and Dashboards**: Creating real-time dashboards for monitoring model performance and insights.
+- **Model Training**: Leveraging PyTorch and CUDA for GPU-accelerated training on the MNIST dataset.
+
+**Key Technologies and Tools:**
+
+- **Programming Language**: Python 3.x
+- **Deep Learning Framework**: PyTorch
+- **Libraries**: NVIDIA RAPIDS, Pandas, Matplotlib, Seaborn, Dash, Plotly, Flask
+- **Hardware**: NVIDIA GPU with CUDA for accelerated computing
+- **Dataset**: MNIST (Modified National Institute of Standards and Technology) Dataset
+
+## Project Structure
+```plaintext
+gpu-accelerated-mlaas/
+├── data/                       # Directory for dataset
+├── models/                     # Directory for model files
+│   └── cnn_model.py            # CNN model definition
+├── utils/                      # Directory for utilities
+│   ├── data_ingestion.py       # Data ingestion script
+│   ├── data_preprocessing.py   # Data preprocessing script
+│   └── data_labeling.py        # Data labeling tool script
+├── templates/                  # Templates for Flask (for data labeling)
+│   └── labeling.html           # HTML template for data labeling tool
+├── dashboards/                 # Directory for dashboards
+│   └── performance_dashboard.py # Dashboard for visualization
+├── train.py                    # Model training script
+├── requirements.txt            # List of dependencies
+├── README.md                   # Documentation
+```
 ## Objectives
 
 - **Develop an MLaaS platform** with essential components.
