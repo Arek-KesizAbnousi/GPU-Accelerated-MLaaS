@@ -7,26 +7,8 @@ from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
 import numpy as np
 
-# Define the CNN model
-class CNN(nn.Module):
-    def __init__(self):
-        super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
-        self.fc1 = nn.Linear(64 * 7 * 7, 128)
-        self.fc2 = nn.Linear(128, 10)
-        self.relu = nn.ReLU()
-
-    def forward(self, x):
-        x = self.relu(self.conv1(x))
-        x = self.pool(x)
-        x = self.relu(self.conv2(x))
-        x = self.pool(x)
-        x = x.view(-1, 64 * 7 * 7)
-        x = self.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
+# Import the CNN model
+from models.cnn_model import CNN
 
 def load_data():
     df = pd.read_csv('data/processed/mnist_preprocessed.csv')
@@ -38,13 +20,6 @@ def train_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     X, y = load_data()
     dataset = TensorDataset(X, y)
-    dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
-
-    model = CNN().to(device)
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-    history = {'accuracy': [], 'val_accuracy': [], 'loss': [], 'val_loss': []}
 
     # Split dataset into training and validation
     train_size = int(0.9 * len(dataset))
@@ -53,7 +28,14 @@ def train_model():
     train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=64, shuffle=False)
 
+    model = CNN().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+    history = {'accuracy': [], 'val_accuracy': [], 'loss': [], 'val_loss': []}
+
     for epoch in range(5):
+        # Training phase
         model.train()
         running_loss = 0.0
         correct = 0
@@ -78,7 +60,7 @@ def train_model():
         history['loss'].append(epoch_loss)
         history['accuracy'].append(epoch_acc)
 
-        # Validation
+        # Validation phase
         model.eval()
         val_loss = 0.0
         val_correct = 0
