@@ -25,7 +25,7 @@ def label_data():
         doc_id = doc['_id']
         source = doc['_source']
         # Convert pixel list back to image
-        pixels = np.array(source['image']).reshape(28,28)
+        pixels = np.array(source['image']).reshape(28, 28)
         # Normalize to [0,255]
         pixels = (pixels * 255).astype(np.uint8)
         # Encode as base64
