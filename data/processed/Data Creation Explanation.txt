@@ -1,0 +1,2 @@
+mnist_ingested.csv: Created by data_ingestion.py. Contains the raw data loaded from the MNIST dataset.
+mnist_preprocessed.csv: Created by data_preprocessing.py. Contains the normalized data ready for training.
